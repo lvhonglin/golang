@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go.uber.org/atomic"
+	"sync/atomic"
 )
 
 func main() {
@@ -13,4 +13,9 @@ func main() {
 	fmt.Println(real)
 	swapped := value.CompareAndSwap(2, 2)
 	fmt.Println(swapped)
+	println("=================")
+	var a int32 = 10
+	atomic.AddInt32(&a, 1)
+	atomic.AddInt32(&a, 1)
+	println(a)
 }

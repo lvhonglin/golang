@@ -1,7 +1,7 @@
 package model
 
 type User struct {
-	name string
+	name string `yaml:"name"`
 }
 
 func GetUser() User {

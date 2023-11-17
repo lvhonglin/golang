@@ -10,10 +10,11 @@ import (
 var echoTimes int
 var kaiguan bool
 var cmdTimes = &cobra.Command{
-	Use:   "time [string to time]",
-	Short: "Echo anything to the screen more times",
-	Long:  (`echo things multiple times back to the user y providing a count and a string`),
-	Args:  cobra.MinimumNArgs(1),
+	Use:                "time [string to time]",
+	Short:              "Echo anything to the screen more times",
+	Long:               (`echo things multiple times back to the user y providing a count and a string`),
+	Args:               cobra.MinimumNArgs(1),
+	DisableFlagParsing: false, //是否禁用flag功能，默认为false
 	Run: func(cmd *cobra.Command, args []string) {
 		if kaiguan {
 			for i := 0; i < echoTimes; i++ {
